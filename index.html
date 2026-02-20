@@ -16,6 +16,49 @@ body{
   color:#f5f5f5;
 }
 
+/* ===== MENU ===== */
+.navbar{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(5,20,15,.95);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid rgba(212,175,55,.35);
+}
+
+.nav-inner{
+  max-width:1200px;
+  margin:auto;
+  padding:12px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.nav-logo{
+  color:#d4af37;
+  font-weight:bold;
+  text-decoration:none;
+  font-size:20px;
+}
+
+.nav-links{
+  display:flex;
+  gap:22px;
+  flex-wrap:wrap;
+}
+
+.nav-links a{
+  color:white;
+  text-decoration:none;
+  font-weight:500;
+  transition:.25s;
+}
+
+.nav-links a:hover{
+  color:#d4af37;
+}
+
 /* HEADER */
 header{
   text-align:center;
@@ -102,6 +145,21 @@ header h1{
 
 <body>
 
+<!-- ===== MENU ===== -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">MOC NATURY</a>
+
+    <div class="nav-links">
+      <a href="index.html">Start</a>
+      <a href="#uslugi">Usługi</a>
+      <a href="cennik.html">Cennik</a>
+      <a href="#kontakt">Kontakt</a>
+      <a href="https://www.facebook.com/profile.php?id=61586488868519" target="_blank">Facebook</a>
+    </div>
+  </div>
+</nav>
+
 <a href="tel:662748489" class="call-btn">📞 Zadzwoń</a>
 
 <header>
@@ -118,7 +176,7 @@ header h1{
   </p>
 </section>
 
-<section class="services">
+<section id="uslugi" class="services">
 
   <a href="biorezonans.html" class="card">
     <img src="bio.jpg" class="service-img">
@@ -144,16 +202,15 @@ header h1{
     <p>Kliknij aby zobaczyć</p>
   </a>
 
-  
   <p style="text-align:center;margin-top:30px">
-  <a href="cennik.html" class="social" style="background:#d4af37;color:#0e2b1f">
-    💰 Zobacz cennik
-  </a>
-</p>
+    <a href="cennik.html" class="social" style="background:#d4af37;color:#0e2b1f">
+      💰 Zobacz cennik
+    </a>
+  </p>
 
 </section>
 
-<section class="contact">
+<section id="kontakt" class="contact">
   <h2 style="color:#d4af37">Kontakt</h2>
   <p>📧 cywinska.katarzyna@wp.pl</p>
   <p>📞 662 748 489</p>
