@@ -1,46 +1,104 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gabinet MOC NATURY</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f5f7fa;
-      color: #222;
-    }
-    header {
-      background: #0a2540;
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
-    }
-    section {
-      padding: 50px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-    }
-    footer {
-      background: #0a2540;
-      color: white;
-      text-align: center;
-      padding: 30px;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Gabinet MOC NATURY</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}
+body{background:#f4f6f9;color:#222;line-height:1.6}
+
+header{
+  background:linear-gradient(135deg,#0a2540,#1e3a5f);
+  color:white;
+  padding:80px 20px;
+  text-align:center;
+}
+header h1{font-size:42px;margin-bottom:10px}
+header p{font-size:18px;opacity:.9}
+
+section{padding:60px 20px;max-width:1100px;margin:auto}
+h2{text-align:center;margin-bottom:40px;font-size:32px}
+
+.services{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+}
+
+.card{
+  background:white;
+  padding:25px;
+  border-radius:14px;
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
+  transition:.25s;
+}
+.card:hover{transform:translateY(-5px)}
+
+.opinions{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+.opinion{
+  background:white;
+  padding:25px;
+  border-radius:14px;
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:15px;
+}
+.gallery img{
+  width:100%;
+  border-radius:12px;
+  height:200px;
+  object-fit:cover;
+}
+
+form{
+  max-width:500px;
+  margin:auto;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+input,textarea{
+  padding:12px;
+  border-radius:8px;
+  border:1px solid #ccc;
+  font-size:16px;
+}
+button{
+  background:#0a2540;
+  color:white;
+  border:none;
+  padding:14px;
+  border-radius:8px;
+  font-size:16px;
+  cursor:pointer;
+}
+button:hover{background:#163a63}
+
+.contact-box{
+  text-align:center;
+  margin-top:25px;
+}
+
+footer{
+  background:#0a2540;
+  color:white;
+  text-align:center;
+  padding:30px;
+  margin-top:40px;
+}
+</style>
 </head>
+
 <body>
 
 <header>
@@ -50,67 +108,77 @@
 
 <section>
   <h2>O nas</h2>
-  <p>W Gabinecie MOC NATURY wspieramy Twoje zdrowie i dobre samopoczucie w naturalny sposób. Stawiamy na zioła, tradycyjne metody i holistyczne podejście, aby przywracać równowagę ciała i ducha w codziennym życiu. Zapraszamy dorosłych i dzieci!
-.</p>
+  <p style="text-align:center;max-width:750px;margin:auto">
+    W Gabinecie MOC NATURY wspieramy Twoje zdrowie i dobre samopoczucie w naturalny sposób.
+    Stawiamy na zioła, tradycyjne metody i holistyczne podejście, aby przywracać równowagę
+    ciała i ducha w codziennym życiu. Zapraszamy dorosłych i dzieci!
+  </p>
 </section>
 
 <section>
   <h2>Usługi</h2>
   <div class="services">
+
     <div class="card">
       <h3>BIOREZONANS</h3>
-      <p> Biorezonans magnetyczny to metoda, którą wykorzystuje tzw. medycyna niekonwencjonalna. Służy ona zarówno celom diagnostycznym, jak i leczniczym, a wykorzystuje zmienne pole magnetyczne. Cała tajemnica biorezonasu magnetycznego opiera się na wykorzystywaniu drgań, a więc częstotliwości rezonansowej. Każdy grzyb, pasożyt czy patogen ma swoje określone drgania. Metoda biorezonansu magnetycznego polega na wykrywaniu w organizmie właśnie takich zmiennych częstotliwości, a następnie wprowadzeniu ich w takie drgania, po których pasożyt czy patogen ulegnie rozpadowi..</p>
+      <p>Biorezonans magnetyczny to metoda wykorzystywana w medycynie niekonwencjonalnej
+      do celów diagnostycznych i wspomagających terapię poprzez pracę na częstotliwościach organizmu.</p>
     </div>
+
     <div class="card">
       <h3>BAŃKI CHIŃSKIE</h3>
-      <p>Stawianie baniek polega na przykładaniu do skóry naczyń (baniek) i wytwarzaniu w nich podciśnienia (próżni), co wciąga skórę i tkankę podskórną, powodując przekrwienie, pękanie drobnych naczyń krwionośnych i mobilizację układu odpornościowego. Efektem jest poprawa krążenia, rozluźnienie mięśni i wzmocnienie odporności poprzez dostarczenie organizmowi "ciała obcego" (krwi), które stymuluje produkcję przeciwciał, wspomagając walkę z infekcjami..</p>
+      <p>Stawianie baniek poprawia krążenie, rozluźnia mięśnie i wspiera odporność organizmu
+      poprzez naturalną stymulację układu immunologicznego.</p>
     </div>
+
     <div class="card">
       <h3>KONCHOWANIE USZU</h3>
-      <p>Konchowanie uszu polega na podpaleniu specjalnej, dobrej jakości konchy woskowanej  i umieszczenie jej w uchu, co powoduje:
-- Oczyszczenie ucha, poprawę słuchu i zmysłów
--Ulgę w bólach głowy, migrenach, zawrotach głowy, szumów usznych
--Wsparcie w leczeniu przeziębień, infekcji zatok, wzmocnienie odporności
--Uspokojenie i relaksację.</p>
+      <p>Zabieg wspierający oczyszczanie uszu, relaksację oraz łagodzenie napięć i bólów głowy.</p>
     </div>
-     <div class="card">
-      <h3>BTR</h3>
-      <p>Urządzenie BRT firmy CosmoMed emituje prąd o precyzyjnie dobranych częstotliwościach, działający na poziomie ogólnoustrojowym. Idealne do terapii systemowych i wzmacniania organizmu.
-📝Dzięki 225 programom terapeutycznym można skutecznie:
-1. Wspierać układ odpornościowy
-Zwalczanie bakterii, wirusów, grzybów i pasożytów, takich jak:
-Borrelia (borelioza), paciorkowce, gronkowce, herpes, czy Candida.
-Regulacja pracy układu immunologicznego w przypadku alergii i chorób autoimmunologicznych.
-2. Leczyć infekcje i stany zapalne
-Infekcje górnych dróg oddechowych (zapalenie zatok, migdałków, krtani, oskrzeli).
-Infekcje układu moczowo-płciowego (np. zapalenie pęcherza, torbiele jajników, zapalenie gruczołu krokowego).
-3. Łagodzić bóle i wspierać regenerację
-Bóle głowy, migreny, bóle kręgosłupa, stawów oraz rwa kulszowa.
-Regeneracja krążków międzykręgowych i zmniejszenie objawów osteoporozy.
-4. Oczyszczać organizm z toksyn
-Detoksykacja przy infekcjach bakteryjnych, pasożytniczych i wirusowych.
-Drenaż układu limfatycznego i oczyszczanie wątroby.
-5. Wspierać układ trawienny
-Regulacja pracy wątroby, trzustki, jelit i żołądka.
-Pomoc przy chorobach takich jak refluks, nieżyt żołądka, hemoroidy czy zapalenie pęcherzyka żółciowego.
-6. Pomagać w dermatologii
-Trądzik, egzema, łuszczyca, brodawki i inne przewlekłe zapalenia skóry.
-7. Wspierać zdrowie oczu
-Pomoc przy zaćmie, jaskrze oraz zwyrodnieniu plamki żółtej.
-8. Poprawiać kondycję układu nerwowego i hormonalnego
-Zmniejszenie stresu, poprawa jakości snu i wsparcie w leczeniu depresji.
-Regulacja pracy tarczycy, równowaga hormonalna u kobiet i mężczyzn.
-9. Zapewniać wsparcie przy schorzeniach przewlekłych
-Nadciśnienie, niedociśnienie, cukrzyca, żylaki czy choroby reumatyczne.
-Terapie wspomagające przy chorobie Hashimoto czy zespole przewlekłego zmęczenia..</p>
+
+    <div class="card">
+      <h3>BRT</h3>
+      <p>Terapia częstotliwościowa wspierająca organizm w regeneracji, detoksykacji
+      oraz wzmacnianiu odporności.</p>
     </div>
+
+  </div>
+</section>
+
+<section>
+  <h2>Opinie klientów</h2>
+  <div class="opinions">
+    <div class="opinion">⭐️⭐️⭐️⭐️⭐️<br>Pełen profesjonalizm i miła atmosfera.</div>
+    <div class="opinion">⭐️⭐️⭐️⭐️⭐️<br>Ogromna ulga po zabiegach — polecam!</div>
+    <div class="opinion">⭐️⭐️⭐️⭐️⭐️<br>Indywidualne podejście do klienta.</div>
+  </div>
+</section>
+
+<section>
+  <h2>Galeria</h2>
+  <div class="gallery">
+    <img src="https://picsum.photos/400?1">
+    <img src="https://picsum.photos/400?2">
+    <img src="https://picsum.photos/400?3">
+    <img src="https://picsum.photos/400?4">
   </div>
 </section>
 
 <section>
   <h2>Kontakt</h2>
-  <p>Email: cywinska.katarzyna@wp.pl</p>
-  <p>Telefon: 662 748 489</p>
+
+  <!-- FORMULARZ (działa po podpięciu Formspree) -->
+  <form action="https://formspree.io/f/yourID" method="POST">
+    <input type="text" name="name" placeholder="Twoje imię" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <textarea name="message" rows="5" placeholder="Wiadomość" required></textarea>
+    <button type="submit">Wyślij wiadomość</button>
+  </form>
+
+  <div class="contact-box">
+    <p>Email: cywinska.katarzyna@wp.pl</p>
+    <p>Telefon: 662 748 489</p>
+  </div>
 </section>
 
 <footer>
