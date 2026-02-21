@@ -10,13 +10,16 @@ html{scroll-behavior:smooth}
 *{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}
 
 body{
-   background:
-    linear-gradient(rgba(5,20,15,.65), rgba(5,20,15,.75)),
-    radial-gradient(circle at 20% 30%, rgba(212,175,55,.48), transparent 10%),
-    radial-gradient(circle at 80% 70%, rgba(212,175,55,.12), transparent 50%),
+  background:
+    linear-gradient(rgba(5,20,15,.55), rgba(5,20,15,.65)),
+    radial-gradient(circle at 20% 30%, rgba(212,175,55,.55), transparent 12%),
+    radial-gradient(circle at 80% 70%, rgba(212,175,55,.25), transparent 55%),
     url("tlo.png") center/cover fixed no-repeat;
   color:#f5f5f5;
 }
+
+/* ===== GLOBAL SPACING ===== */
+section{ margin-top:90px; }
 
 /* ===== MENU ===== */
 .navbar{
@@ -25,13 +28,13 @@ body{
   z-index:1000;
   background:rgba(5,20,15,.95);
   backdrop-filter:blur(6px);
-  border-bottom:1px solid rgba(212,175,55,.35);
+  border-bottom:1px solid rgba(212,175,55,.45);
 }
 
 .nav-inner{
   max-width:1200px;
   margin:auto;
-  padding:12px 20px;
+  padding:14px 20px;
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -41,12 +44,13 @@ body{
   color:#d4af37;
   font-weight:bold;
   text-decoration:none;
-  font-size:20px;
+  font-size:22px;
+  letter-spacing:.5px;
 }
 
 .nav-links{
   display:flex;
-  gap:22px;
+  gap:24px;
   flex-wrap:wrap;
 }
 
@@ -74,7 +78,6 @@ body{
   display:block;
 }
 
-/* mobile menu */
 @media (max-width:768px){
   .hamburger{ display:flex; }
 
@@ -98,17 +101,18 @@ body{
 /* HEADER */
 header{
   text-align:center;
-  padding:80px 20px 60px;
+  padding:100px 20px 80px;
 }
 
 .logo{
   width:240px;
   max-width:80%;
   margin-bottom:25px;
+  filter:drop-shadow(0 0 12px rgba(212,175,55,.45));
 }
 
 header h1{
-  font-size:44px;
+  font-size:46px;
   color:#d4af37;
 }
 
@@ -116,7 +120,7 @@ header h1{
 .services{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:24px;
+  gap:28px;
   max-width:1100px;
   margin:60px auto;
   padding:0 20px;
@@ -126,16 +130,17 @@ header h1{
   background:rgba(0,0,0,.55);
   padding:26px;
   border-radius:18px;
-  border:1px solid rgba(212,175,55,.35);
+  border:1px solid rgba(212,175,55,.45);
   text-align:center;
   text-decoration:none;
   color:white;
-  transition:.3s;
+  transition:.35s;
 }
 
 .card:hover{
-  transform:translateY(-6px);
+  transform:translateY(-8px);
   border-color:#d4af37;
+  box-shadow:0 0 25px rgba(212,175,55,.25);
 }
 
 .service-img{
@@ -146,37 +151,51 @@ header h1{
   margin-bottom:12px;
 }
 
-/* ===== OPINIE ===== */
+/* ===== OPINIE — SLIDER ===== */
 .reviews{
   max-width:1100px;
-  margin:80px auto;
+  margin:90px auto;
   padding:0 20px;
   text-align:center;
 }
 
-.review-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+.review-slider{
+  display:flex;
   gap:24px;
   margin-top:30px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  padding-bottom:14px;
+}
+
+.review-slider::-webkit-scrollbar{
+  height:8px;
+}
+.review-slider::-webkit-scrollbar-thumb{
+  background:#d4af37;
+  border-radius:10px;
 }
 
 .review{
+  min-width:280px;
+  max-width:320px;
   background:rgba(0,0,0,.55);
-  border:1px solid rgba(212,175,55,.35);
+  border:1px solid rgba(212,175,55,.45);
   border-radius:18px;
-  padding:24px;
-  transition:.3s;
+  padding:26px;
+  scroll-snap-align:start;
+  flex-shrink:0;
+  transition:.35s;
 }
 
 .review:hover{
-  transform:translateY(-6px);
-  border-color:#d4af37;
+  transform:translateY(-8px);
+  box-shadow:0 0 25px rgba(212,175,55,.25);
 }
 
 .review-stars{
   color:#d4af37;
-  font-size:20px;
+  font-size:22px;
   margin-bottom:10px;
 }
 
@@ -189,7 +208,7 @@ header h1{
 /* CONTACT */
 .contact{
   text-align:center;
-  padding:60px 20px;
+  padding:80px 20px;
 }
 
 /* BUTTONS */
@@ -279,11 +298,10 @@ header h1{
   </a>
 </section>
 
-<!-- ⭐ OPINIE -->
 <section class="reviews">
   <h2 style="color:#d4af37">Opinie klientów</h2>
 
-  <div class="review-grid">
+  <div class="review-slider">
     <div class="review">
       <div class="review-stars">★★★★★</div>
       <p>Świetna atmosfera i pełen profesjonalizm. Bardzo polecam!</p>
@@ -301,12 +319,13 @@ header h1{
       <p>Indywidualne podejście i duża wiedza. Na pewno wrócę.</p>
       <div class="review-name">— Katarzyna W.</div>
     </div>
+
+    <div class="review">
+      <div class="review-stars">★★★★★</div>
+      <p>Bardzo miła obsługa i widoczne efekty terapii.</p>
+      <div class="review-name">— Monika S.</div>
+    </div>
   </div>
-
-
-
-
-   
 </section>
 
 <section id="kontakt" class="contact">
