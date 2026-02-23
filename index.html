@@ -320,6 +320,29 @@ header h1{
 .lang-switch img:hover{
   transform:scale(1.08);
 }
+  /* ===== FLAGI — PRAWO GÓRA NA STAŁE ===== */
+.lang-switch{
+  position:fixed;
+  top:20px;
+  right:20px;
+  display:flex;
+  gap:8px;
+  z-index:9999;
+}
+
+.lang-switch img{
+  width:36px;
+  height:24px;
+  cursor:pointer;
+  border-radius:4px;
+  border:1px solid rgba(255,255,255,.35);
+  transition:.2s;
+  background:white;
+}
+
+.lang-switch img:hover{
+  transform:scale(1.1);
+}
 </style>
 </head>
 
