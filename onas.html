@@ -15,60 +15,88 @@ body{
     radial-gradient(circle at 80% 70%, rgba(212,175,55,.25), transparent 55%),
     url("tlo.png") center/cover fixed no-repeat;
   color:#f5f5f5;
-  text-align:center;
 }
 
-.container{
-  max-width:900px;
-  margin:80px auto;
-  padding:40px 20px;
-}
+/* MENU */
+.navbar{position:sticky;top:0;background:rgba(5,20,15,.95);border-bottom:1px solid rgba(212,175,55,.45)}
+.nav-inner{max-width:1200px;margin:auto;padding:14px 20px;display:flex;justify-content:space-between}
+.nav-logo{color:#d4af37;text-decoration:none;font-weight:bold}
+.nav-links{display:flex;gap:18px;flex-wrap:wrap}
+.nav-links a{color:white;text-decoration:none}
+.nav-links a:hover{color:#d4af37}
 
-h1{
-  color:#d4af37;
-  font-size:44px;
-  margin-bottom:30px;
-}
+/* język */
+.lang-menu{display:flex;gap:8px;color:#d4af37;font-size:14px}
+.lang-menu a{color:white;text-decoration:none;padding:2px 6px;border:1px solid rgba(212,175,55,.4);border-radius:4px}
+.lang-menu a:hover{background:#d4af37;color:#0e2b1f}
 
-.desc{
-  background:rgba(0,0,0,.45);
-  border:1px solid rgba(212,175,55,.35);
-  border-radius:18px;
-  padding:30px;
-  line-height:1.7;
-  font-size:18px;
-  text-align:left;
-}
+/* content */
+.container{max-width:900px;margin:80px auto;padding:40px 20px;text-align:center}
+h1{color:#d4af37;font-size:42px;margin-bottom:30px}
+.desc{background:rgba(0,0,0,.45);border:1px solid rgba(212,175,55,.35);border-radius:18px;padding:30px;line-height:1.7;text-align:left}
 
-.back{
-  display:inline-block;
-  margin-top:50px;
-  padding:14px 24px;
-  background:#d4af37;
-  color:#0e2b1f;
-  text-decoration:none;
-  border-radius:10px;
-  font-weight:bold;
-}
+footer{text-align:center;padding:30px;color:#d4af37;border-top:1px solid rgba(212,175,55,.35)}
 </style>
 </head>
 
 <body>
 
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">MOC NATURY</a>
+
+    <div class="nav-links">
+      <a href="index.html">Start</a>
+      <a href="cennik.html">Cennik</a>
+
+      <div class="lang-menu">
+        🌐 Język:
+        <a href="#" onclick="translateTo('pl')">PL</a>
+        <a href="#" onclick="translateTo('en')">EN</a>
+        <a href="#" onclick="translateTo('de')">DE</a>
+        <a href="#" onclick="translateTo('uk')">UA</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
 <div class="container">
+  <h1>O nas</h1>
 
-<h1>O nas</h1>
-
-<div class="desc">
-Gabinet <strong>MOC NATURY</strong> powstał z pasji do naturalnych metod wspierania zdrowia i dobrego samopoczucia.Prowadzony jest przez mgr Katarzynę Cywińską. W swojej pracy łączymy wiedzę, doświadczenie oraz holistyczne podejście do organizmu.
+  <div class="desc">
+  Gabinet <strong>MOC NATURY</strong> powstał z pasji do naturalnych metod wspierania zdrowia i dobrego samopoczucia.Prowadzony jest przez mgr Katarzynę Cywińską. W swojej pracy łączymy wiedzę, doświadczenie oraz holistyczne podejście do organizmu.
 
 Naszym celem jest wspieranie naturalnych procesów organizmu, poprawa komfortu życia oraz pomoc w odzyskaniu równowagi ciała i ducha.
 
 Każdą osobę traktujemy indywidualnie, dobierając metody pracy do jej potrzeb. Zapraszamy zarówno dorosłych, jak i dzieci.
+
+  </div>
 </div>
 
-<a href="index.html" class="back">← Powrót do strony głównej</a>
+<footer>
+  © <span id="year"></span> Gabinet MOC NATURY
+</footer>
 
-</div>
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'pl',
+    includedLanguages: 'pl,en,de,uk',
+    autoDisplay: false
+  }, 'google_translate_element');
+}
+
+function translateTo(lang){
+  if(lang==='pl'){document.cookie="googtrans=/pl/pl;path=/";location.reload();return;}
+  const select=document.querySelector(".goog-te-combo");
+  if(select){select.value=lang;select.dispatchEvent(new Event("change"));}
+}
+</script>
+
+<div id="google_translate_element" style="display:none;"></div>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 </body>
 </html>
