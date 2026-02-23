@@ -63,6 +63,30 @@ section{ margin-top:90px; }
 
 .nav-links a:hover{ color:#d4af37; }
 
+/* ===== JĘZYK W MENU ===== */
+.lang-menu{
+  display:flex;
+  gap:8px;
+  align-items:center;
+  font-size:14px;
+  color:#d4af37;
+  margin-left:10px;
+}
+
+.lang-menu a{
+  color:white;
+  text-decoration:none;
+  padding:2px 6px;
+  border-radius:4px;
+  border:1px solid rgba(212,175,55,.4);
+  transition:.2s;
+}
+
+.lang-menu a:hover{
+  background:#d4af37;
+  color:#0e2b1f;
+}
+
 /* ===== HAMBURGER ===== */
 .hamburger{
   display:none;
@@ -205,54 +229,7 @@ header h1{
   color:#d4af37;
 }
 
-/* CONTACT */
-.contact{
-  text-align:center;
-  padding:80px 20px;
-}
-
-/* BUTTONS */
-.social{
-  display:inline-block;
-  margin-top:15px;
-  padding:12px 18px;
-  background:#1877f2;
-  color:white;
-  border-radius:8px;
-  text-decoration:none;
-  font-weight:bold;
-}
-
-.call-btn{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#d4af37;
-  color:#0e2b1f;
-  padding:16px 22px;
-  border-radius:50px;
-  font-weight:bold;
-  text-decoration:none;
-}
-  .faq{
-  max-width:900px;
-  margin:90px auto;
-  padding:0 20px;
-}
-
-.faq-item{
-  background:rgba(0,0,0,.55);
-  border:1px solid rgba(212,175,55,.35);
-  border-radius:14px;
-  margin-bottom:14px;
-  padding:18px;
-}
-
-.faq-item h3{
-  color:#d4af37;
-  margin-bottom:6px;
-}
-  /* ===== FAQ PRO ===== */
+/* ===== FAQ PRO ===== */
 .faq{
   max-width:900px;
   margin:90px auto;
@@ -298,63 +275,39 @@ header h1{
   line-height:1.6;
 }
 
-/* ===== FLAGI ===== */
-.lang-switch{
+/* CONTACT */
+.contact{
+  text-align:center;
+  padding:80px 20px;
+}
+
+/* BUTTON */
+.social{
+  display:inline-block;
+  margin-top:15px;
+  padding:12px 18px;
+  background:#1877f2;
+  color:white;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.call-btn{
   position:fixed;
-  top:80px; /* ← opuszcza flagi pod menu */
+  bottom:20px;
   right:20px;
-  display:flex;
-  gap:8px;
-  z-index:9999;
-}
-
-.lang-switch img{
-  width:36px;
-  height:24px;
-  cursor:pointer;
-  border-radius:4px;
-  border:1px solid rgba(255,255,255,.3);
-  transition:.2s;
-}
-
-.lang-switch img:hover{
-  transform:scale(1.08);
-}
-  /* ===== FLAGI — PRAWO GÓRA NA STAŁE ===== */
-.lang-switch{
-  position:fixed;
-  top:20px;
-  right:20px;
-  display:flex;
-  gap:8px;
-  z-index:9999;
-}
-
-.lang-switch img{
-  width:36px;
-  height:24px;
-  cursor:pointer;
-  border-radius:4px;
-  border:1px solid rgba(255,255,255,.35);
-  transition:.2s;
-  background:white;
-}
-
-.lang-switch img:hover{
-  transform:scale(1.1);
+  background:#d4af37;
+  color:#0e2b1f;
+  padding:16px 22px;
+  border-radius:50px;
+  font-weight:bold;
+  text-decoration:none;
 }
 </style>
 </head>
 
 <body>
-  <!-- ===== FLAGI JĘZYKÓW ===== -->
-<div class="lang-switch">
-  <img src="https://flagcdn.com/w40/pl.png" onclick="translateTo('pl')" title="Polski">
-  <img src="https://flagcdn.com/w40/gb.png" onclick="translateTo('en')" title="English">
-  <img src="https://flagcdn.com/w40/de.png" onclick="translateTo('de')" title="Deutsch">
-  <img src="https://flagcdn.com/w40/ua.png" onclick="translateTo('uk')" title="Українська">
-</div>
-
 
 <nav class="navbar">
   <div class="nav-inner">
@@ -371,16 +324,22 @@ header h1{
       <a href="cennik.html">Cennik</a>
       <a href="#kontakt">Kontakt</a>
       <a href="https://www.facebook.com/profile.php?id=61586488868519" target="_blank">Facebook</a>
+
+      <div class="lang-menu">
+        🌐 Język:
+        <a href="#" onclick="translateTo('pl')">PL</a>
+        <a href="#" onclick="translateTo('en')">EN</a>
+        <a href="#" onclick="translateTo('de')">DE</a>
+        <a href="#" onclick="translateTo('uk')">UA</a>
+      </div>
     </div>
   </div>
 </nav>
 
 <a href="tel:662748489" class="call-btn">📞 Zadzwoń</a>
-</a>
 
 <header>
   <img src="logo.png" class="logo">
- 
   <p>Usługi medycyny alternatywnej</p>
 </header>
 
@@ -388,9 +347,6 @@ header h1{
   <p>
     W Gabinecie MOC NATURY wspieramy Twoje zdrowie i dobre samopoczucie w naturalny sposób. Stawiamy na zioła, tradycyjne metody i holistyczne podejście, aby przywracać równowagę ciała i ducha w codziennym życiu. Zapraszamy dorosłych i dzieci!
   </p>
-
-
-  
 </section>
 
 <section id="uslugi" class="services">
@@ -434,8 +390,8 @@ header h1{
       <p>Już po pierwszej wizycie poczułem ogromną poprawę.</p>
       <div class="review-name">— Marek P.</div>
     </div>
-    
-     <div class="review">
+
+    <div class="review">
       <div class="review-stars">★★★★★</div>
       <p>Pani Kasia jest specjalistką w swojej dziedzinie, polecam!</p>
       <div class="review-name">— Marzena J.</div>
@@ -454,13 +410,8 @@ header h1{
     </div>
   </div>
 </section>
-  </section>   <!-- koniec usług lub opini -->
-
 
 <section class="faq">
-  <h2 style="color:#d4af37;text-align:center">Najczęstsze pytania</h2>
-
-  <section class="faq">
   <h2 style="color:#d4af37;text-align:center">Najczęstsze pytania</h2>
 
   <details>
@@ -478,15 +429,11 @@ header h1{
     <p>Tak — wybrane zabiegi są dla dzieci.</p>
   </details>
 
-    <details>
+  <details>
     <summary>Czy każdy może skorzystać z zabiegów?</summary>
     <p>Przed każdym zabiegiem przeprowadzany jest wywiad.</p>
   </details>
-    
 </section>
-
-
-<section id="kontakt" class="contact">
 
 <section id="kontakt" class="contact">
   <h2 style="color:#d4af37">Kontakt</h2>
@@ -498,7 +445,6 @@ header h1{
     👍 Znajdź nas na Facebooku
   </a>
 
-  <!-- ===== MAPA GOOGLE ===== -->
   <div style="max-width:900px;margin:40px auto;border-radius:16px;overflow:hidden;border:2px solid rgba(212,175,55,.45)">
     <iframe
       src="https://www.google.com/maps?q=Kasprzaka+42+Grudziadz&output=embed"
@@ -510,7 +456,6 @@ header h1{
   </div>
 </section>
 
-<!-- ===== STOPKA ===== -->
 <footer style="text-align:center;padding:30px;color:#d4af37;border-top:1px solid rgba(212,175,55,.35)">
   © <span id="year"></span> Gabinet MOC NATURY
 </footer>
@@ -520,13 +465,8 @@ function toggleMenu(){
   document.getElementById("navLinks").classList.toggle("active");
 }
 
-/* AUTO ROK */
 document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-  <!-- ===== GOOGLE TRANSLATE ===== -->
-<div id="google_translate_element" style="display:none;"></div>
 
-<script>
 function googleTranslateElementInit() {
   new google.translate.TranslateElement({
     pageLanguage: 'pl',
@@ -541,7 +481,6 @@ function translateTo(lang){
     location.reload();
     return;
   }
-
   const select = document.querySelector(".goog-te-combo");
   if(select){
     select.value = lang;
@@ -550,6 +489,7 @@ function translateTo(lang){
 }
 </script>
 
+<div id="google_translate_element" style="display:none;"></div>
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
