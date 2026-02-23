@@ -349,10 +349,12 @@ header h1{
 <body>
   <!-- ===== FLAGI JĘZYKÓW ===== -->
 <div class="lang-switch">
+  <img src="https://flagcdn.com/w40/pl.png" onclick="translateTo('pl')" title="Polski">
   <img src="https://flagcdn.com/w40/gb.png" onclick="translateTo('en')" title="English">
   <img src="https://flagcdn.com/w40/de.png" onclick="translateTo('de')" title="Deutsch">
   <img src="https://flagcdn.com/w40/ua.png" onclick="translateTo('uk')" title="Українська">
 </div>
+
 
 <nav class="navbar">
   <div class="nav-inner">
@@ -528,12 +530,18 @@ document.getElementById("year").textContent = new Date().getFullYear();
 function googleTranslateElementInit() {
   new google.translate.TranslateElement({
     pageLanguage: 'pl',
-    includedLanguages: 'en,de,uk',
+    includedLanguages: 'pl,en,de,uk',
     autoDisplay: false
   }, 'google_translate_element');
 }
 
 function translateTo(lang){
+  if(lang === 'pl'){
+    document.cookie = "googtrans=/pl/pl;path=/";
+    location.reload();
+    return;
+  }
+
   const select = document.querySelector(".goog-te-combo");
   if(select){
     select.value = lang;
