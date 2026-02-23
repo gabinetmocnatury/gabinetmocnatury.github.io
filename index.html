@@ -252,10 +252,84 @@ header h1{
   color:#d4af37;
   margin-bottom:6px;
 }
+  /* ===== FAQ PRO ===== */
+.faq{
+  max-width:900px;
+  margin:90px auto;
+  padding:0 20px;
+}
+
+.faq details{
+  background:rgba(0,0,0,.55);
+  border:1px solid rgba(212,175,55,.35);
+  border-radius:14px;
+  margin-bottom:14px;
+  padding:18px;
+  transition:.3s;
+}
+
+.faq details[open]{
+  box-shadow:0 0 20px rgba(212,175,55,.25);
+}
+
+.faq summary{
+  color:#d4af37;
+  font-weight:bold;
+  font-size:18px;
+  cursor:pointer;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  list-style:none;
+}
+
+.faq summary::after{
+  content:"+";
+  font-size:22px;
+  transition:.25s;
+}
+
+.faq details[open] summary::after{
+  content:"−";
+}
+
+.faq details p{
+  margin-top:12px;
+  line-height:1.6;
+}
+
+/* ===== FLAGI ===== */
+.lang-switch{
+  position:fixed;
+  top:90px;
+  right:20px;
+  display:flex;
+  gap:8px;
+  z-index:999;
+}
+
+.lang-switch img{
+  width:36px;
+  height:24px;
+  cursor:pointer;
+  border-radius:4px;
+  border:1px solid rgba(255,255,255,.3);
+  transition:.2s;
+}
+
+.lang-switch img:hover{
+  transform:scale(1.08);
+}
 </style>
 </head>
 
 <body>
+  <!-- ===== FLAGI JĘZYKÓW ===== -->
+<div class="lang-switch">
+  <img src="https://flagcdn.com/w40/gb.png" onclick="translateTo('en')" title="English">
+  <img src="https://flagcdn.com/w40/de.png" onclick="translateTo('de')" title="Deutsch">
+  <img src="https://flagcdn.com/w40/ua.png" onclick="translateTo('uk')" title="Українська">
+</div>
 
 <nav class="navbar">
   <div class="nav-inner">
@@ -420,6 +494,28 @@ function toggleMenu(){
 /* AUTO ROK */
 document.getElementById("year").textContent = new Date().getFullYear();
 </script>
+  <!-- ===== GOOGLE TRANSLATE ===== -->
+<div id="google_translate_element" style="display:none;"></div>
+
+<script>
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'pl',
+    includedLanguages: 'en,de,uk',
+    autoDisplay: false
+  }, 'google_translate_element');
+}
+
+function translateTo(lang){
+  const select = document.querySelector(".goog-te-combo");
+  if(select){
+    select.value = lang;
+    select.dispatchEvent(new Event("change"));
+  }
+}
+</script>
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>
