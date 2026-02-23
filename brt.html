@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Terapia BRT | Gabinet MOC NATURY</title>
+<title>Usługa | Gabinet MOC NATURY</title>
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}
@@ -15,48 +15,96 @@ body{
     radial-gradient(circle at 80% 70%, rgba(212,175,55,.25), transparent 55%),
     url("tlo.png") center/cover fixed no-repeat;
   color:#f5f5f5;
+}
+
+/* ===== MENU ===== */
+.navbar{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(5,20,15,.95);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid rgba(212,175,55,.45);
+}
+
+.nav-inner{
+  max-width:1200px;
+  margin:auto;
+  padding:14px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.nav-logo{
+  color:#d4af37;
+  font-weight:bold;
+  text-decoration:none;
+  font-size:22px;
+}
+
+.nav-links{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
+.nav-links a{
+  color:white;
+  text-decoration:none;
+}
+
+.nav-links a:hover{ color:#d4af37; }
+
+/* ===== JĘZYK ===== */
+.lang-menu{
+  display:flex;
+  gap:8px;
+  align-items:center;
+  font-size:14px;
+  color:#d4af37;
+}
+
+.lang-menu a{
+  color:white;
+  text-decoration:none;
+  padding:2px 6px;
+  border-radius:4px;
+  border:1px solid rgba(212,175,55,.4);
+}
+
+.lang-menu a:hover{
+  background:#d4af37;
+  color:#0e2b1f;
+}
+
+/* ===== CONTENT ===== */
+.container{
+  max-width:900px;
+  margin:80px auto;
+  padding:40px 20px;
   text-align:center;
 }
 
-/* ===== CONTAINER ===== */
-.container{
-  max-width:950px;
-  margin:80px auto;
-  padding:40px 20px;
-}
-
-/* ===== TYTUŁ ===== */
 h1{
   color:#d4af37;
-  font-size:44px;
+  font-size:42px;
   margin-bottom:30px;
 }
 
-/* ===== OPIS ===== */
 .desc{
-  text-align:left;
-  line-height:1.7;
-  font-size:17px;
   background:rgba(0,0,0,.45);
   border:1px solid rgba(212,175,55,.35);
   border-radius:18px;
   padding:30px;
+  line-height:1.7;
+  font-size:18px;
+  text-align:left;
 }
 
-/* ===== LISTA ===== */
-.desc ol{
-  margin-top:15px;
-  padding-left:18px;
-}
-
-.desc li{
-  margin-bottom:14px;
-}
-
-/* ===== BUTTON ===== */
 .back{
   display:inline-block;
-  margin-top:50px;
+  margin-top:40px;
   padding:14px 24px;
   background:#d4af37;
   color:#0e2b1f;
@@ -64,55 +112,84 @@ h1{
   border-radius:10px;
   font-weight:bold;
 }
+
+footer{
+  text-align:center;
+  padding:30px;
+  color:#d4af37;
+  border-top:1px solid rgba(212,175,55,.35);
+}
 </style>
 </head>
 
 <body>
 
+<!-- ===== MENU ===== -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">MOC NATURY</a>
+
+    <div class="nav-links">
+      <a href="index.html">Start</a>
+      <a href="onas.html">O nas</a>
+      <a href="cennik.html">Cennik</a>
+
+      <div class="lang-menu">
+        🌐 Język:
+        <a href="#" onclick="translateTo('pl')">PL</a>
+        <a href="#" onclick="translateTo('en')">EN</a>
+        <a href="#" onclick="translateTo('de')">DE</a>
+        <a href="#" onclick="translateTo('uk')">UA</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== TREŚĆ ===== -->
 <div class="container">
 
-<h1>BRT</h1>
+  <!-- 🔴 ZMIEŃ TYTUŁ -->
+  <h1>TU WPISZ NAZWĘ USŁUGI</h1>
 
-<div class="desc">
+  <!-- 🔴 ZMIEŃ OPIS -->
+  <div class="desc">
+    TU WKLEJ OPIS USŁUGI
+  </div>
 
-<p><strong>Urządzenie BRT firmy CosmoMed</strong> emituje prąd o precyzyjnie dobranych częstotliwościach, działający na poziomie ogólnoustrojowym. Idealne do terapii systemowych i wzmacniania organizmu.</p>
-
-<p><strong>Dzięki 225 programom terapeutycznym można skutecznie:</strong></p>
-
-<ol>
-<li><strong>Wspierać układ odpornościowy</strong><br>
-Zwalczanie bakterii, wirusów, grzybów i pasożytów (m.in. Borrelia, paciorkowce, gronkowce, herpes, Candida). Regulacja pracy układu immunologicznego przy alergiach i chorobach autoimmunologicznych.</li>
-
-<li><strong>Leczyć infekcje i stany zapalne</strong><br>
-Infekcje górnych dróg oddechowych oraz układu moczowo-płciowego.</li>
-
-<li><strong>Łagodzić bóle i wspierać regenerację</strong><br>
-Bóle głowy, migreny, bóle kręgosłupa, stawów oraz rwa kulszowa.</li>
-
-<li><strong>Oczyszczać organizm z toksyn</strong><br>
-Detoksykacja oraz drenaż układu limfatycznego.</li>
-
-<li><strong>Wspierać układ trawienny</strong><br>
-Regulacja pracy wątroby, trzustki, jelit i żołądka.</li>
-
-<li><strong>Pomagać w dermatologii</strong><br>
-Trądzik, egzema, łuszczyca, brodawki i inne przewlekłe stany skóry.</li>
-
-<li><strong>Wspierać zdrowie oczu</strong><br>
-Pomoc przy zaćmie, jaskrze oraz zwyrodnieniu plamki żółtej.</li>
-
-<li><strong>Poprawiać kondycję układu nerwowego i hormonalnego</strong><br>
-Zmniejszenie stresu, poprawa jakości snu, regulacja pracy tarczycy i równowagi hormonalnej.</li>
-
-<li><strong>Zapewniać wsparcie przy schorzeniach przewlekłych</strong><br>
-Nadciśnienie, niedociśnienie, cukrzyca, żylaki, choroby reumatyczne, Hashimoto, zespół przewlekłego zmęczenia.</li>
-</ol>
-
+  <a href="index.html" class="back">← Powrót do strony głównej</a>
 </div>
 
-<a href="index.html" class="back">← Powrót do strony głównej</a>
+<footer>
+  © <span id="year"></span> Gabinet MOC NATURY
+</footer>
 
-</div>
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'pl',
+    includedLanguages: 'pl,en,de,uk',
+    autoDisplay: false
+  }, 'google_translate_element');
+}
+
+function translateTo(lang){
+  if(lang === 'pl'){
+    document.cookie = "googtrans=/pl/pl;path=/";
+    location.reload();
+    return;
+  }
+  const select = document.querySelector(".goog-te-combo");
+  if(select){
+    select.value = lang;
+    select.dispatchEvent(new Event("change"));
+  }
+}
+</script>
+
+<div id="google_translate_element" style="display:none;"></div>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>
