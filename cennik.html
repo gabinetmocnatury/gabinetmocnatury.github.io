@@ -9,7 +9,7 @@
 *{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}
 
 body{
-   background:
+  background:
     linear-gradient(rgba(5,20,15,.55), rgba(5,20,15,.65)),
     radial-gradient(circle at 20% 30%, rgba(212,175,55,.55), transparent 12%),
     radial-gradient(circle at 80% 70%, rgba(212,175,55,.25), transparent 55%),
@@ -18,84 +18,49 @@ body{
   text-align:center;
 }
 
-.container{
-  max-width:950px;
-  margin:70px auto;
-  padding:30px 20px;
-}
+.navbar{position:sticky;top:0;background:rgba(5,20,15,.95);border-bottom:1px solid rgba(212,175,55,.45)}
+.nav-inner{max-width:1200px;margin:auto;padding:14px 20px;display:flex;justify-content:space-between}
+.nav-logo{color:#d4af37;text-decoration:none;font-weight:bold}
+.nav-links{display:flex;gap:18px;flex-wrap:wrap}
+.nav-links a{color:white;text-decoration:none}
+.nav-links a:hover{color:#d4af37}
 
-h1{
-  color:#d4af37;
-  font-size:44px;
-  margin-bottom:35px;
-}
+.lang-menu{display:flex;gap:8px;color:#d4af37;font-size:14px}
+.lang-menu a{color:white;text-decoration:none;padding:2px 6px;border:1px solid rgba(212,175,55,.4);border-radius:4px}
+.lang-menu a:hover{background:#d4af37;color:#0e2b1f}
 
-/* tabela cen */
-.pricing{
-  background:rgba(0,0,0,.55);
-  border-radius:18px;
-  border:1px solid rgba(212,175,55,.45);
-  overflow:hidden;
-  box-shadow:0 0 25px rgba(212,175,55,.15);
-}
+.container{max-width:900px;margin:80px auto;padding:30px 20px}
+h1{color:#d4af37;font-size:42px;margin-bottom:30px}
 
-.price-row{
-  display:flex;
-  justify-content:space-between;
-  padding:18px 24px;
-  font-size:20px;
-}
+.pricing{background:rgba(0,0,0,.55);border-radius:18px;border:1px solid rgba(212,175,55,.35);overflow:hidden}
+.price-row{display:flex;justify-content:space-between;padding:18px 22px;font-size:20px}
+.price-row:nth-child(even){background:rgba(0,0,0,.25)}
+.price{color:#d4af37;font-weight:bold}
 
-.price-row:nth-child(even){
-  background:rgba(0,0,0,.25);
-}
-
-.price{
-  color:#d4af37;
-  font-weight:bold;
-  font-size:22px;
-}
-
-/* ===== LEGENDA ===== */
-.legend{
-  text-align:left;
-  margin-top:50px;
-  background:rgba(0,0,0,.55);
-  border:1px solid rgba(212,175,55,.45);
-  border-radius:18px;
-  padding:26px 26px;
-  line-height:1.7;
-  box-shadow:0 0 25px rgba(212,175,55,.12);
-}
-
-.legend h2{
-  color:#d4af37;
-  margin-bottom:14px;
-}
-
-.legend ul{
-  padding-left:18px;
-}
-
-.legend li{
-  margin-bottom:10px;
-}
-
-/* button */
-.back{
-  display:inline-block;
-  margin-top:45px;
-  padding:14px 24px;
-  background:#d4af37;
-  color:#0e2b1f;
-  text-decoration:none;
-  border-radius:10px;
-  font-weight:bold;
-}
+footer{text-align:center;padding:30px;color:#d4af37;border-top:1px solid rgba(212,175,55,.35)}
 </style>
 </head>
 
 <body>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">MOC NATURY</a>
+
+    <div class="nav-links">
+      <a href="index.html">Start</a>
+      <a href="onas.html">O nas</a>
+
+      <div class="lang-menu">
+        🌐 Język:
+        <a href="#" onclick="translateTo('pl')">PL</a>
+        <a href="#" onclick="translateTo('en')">EN</a>
+        <a href="#" onclick="translateTo('de')">DE</a>
+        <a href="#" onclick="translateTo('uk')">UA</a>
+      </div>
+    </div>
+  </div>
+</nav>
 
 <div class="container">
   <h1>Cennik</h1>
@@ -107,25 +72,32 @@ h1{
     <div class="price-row"><span>Konchowanie uszu</span><span class="price">60 zł</span></div>
     <div class="price-row"><span>BRT</span><span class="price">50 zł</span></div>
   </div>
-
-  <!-- ===== LEGENDA ===== -->
-  <div class="legend">
-    <h2>Cennik — szczegóły usług</h2>
-    <ul>
-      <li><strong>Usługa biorezonans</strong> (dla osób od 10. roku życia) – test kompleksowy całego organizmu: <strong>200 zł</strong> (w cenie raport całego organizmu + zalecenia z zakresu ziołolecznictwa w formie druku oraz wysłane na email)</li>
-
-      <li><strong>Terapia BRT</strong> (urządzenie „naprawcze” organizmu) – koszt jednorazowo: <strong>50 zł</strong> (zaleca się kilkukrotne wizyty)</li>
-
-      <li><strong>Stawianie baniek ogniowych</strong> (tylko dla osób pełnoletnich) – koszt: <strong>100 zł</strong> (czas trwania sesji: 30–45 min)</li>
-
-      <li><strong>Stawianie baniek bezogniowych (próżniowych)</strong> dla dzieci w wieku 10–18 lat – koszt: <strong>50 zł</strong> (sesja 15–25 min)</li>
-
-      <li><strong>Konchowanie uszu</strong> – koszt: <strong>60 zł</strong> (tylko osoby pełnoletnie)</li>
-    </ul>
-  </div>
-
-  <a href="index.html" class="back">← Powrót do strony głównej</a>
 </div>
+
+<footer>
+  © <span id="year"></span> Gabinet MOC NATURY
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'pl',
+    includedLanguages: 'pl,en,de,uk',
+    autoDisplay: false
+  }, 'google_translate_element');
+}
+
+function translateTo(lang){
+  if(lang==='pl'){document.cookie="googtrans=/pl/pl;path=/";location.reload();return;}
+  const select=document.querySelector(".goog-te-combo");
+  if(select){select.value=lang;select.dispatchEvent(new Event("change"));}
+}
+</script>
+
+<div id="google_translate_element" style="display:none;"></div>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>
