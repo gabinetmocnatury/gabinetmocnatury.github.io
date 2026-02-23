@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bańki chińskie | Gabinet MOC NATURY</title>
+<title>Usługa | Gabinet MOC NATURY</title>
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}
@@ -15,39 +15,96 @@ body{
     radial-gradient(circle at 80% 70%, rgba(212,175,55,.25), transparent 55%),
     url("tlo.png") center/cover fixed no-repeat;
   color:#f5f5f5;
-  text-align:center;
 }
 
-/* ===== CONTAINER ===== */
+/* ===== MENU ===== */
+.navbar{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(5,20,15,.95);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid rgba(212,175,55,.45);
+}
+
+.nav-inner{
+  max-width:1200px;
+  margin:auto;
+  padding:14px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.nav-logo{
+  color:#d4af37;
+  font-weight:bold;
+  text-decoration:none;
+  font-size:22px;
+}
+
+.nav-links{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
+.nav-links a{
+  color:white;
+  text-decoration:none;
+}
+
+.nav-links a:hover{ color:#d4af37; }
+
+/* ===== JĘZYK ===== */
+.lang-menu{
+  display:flex;
+  gap:8px;
+  align-items:center;
+  font-size:14px;
+  color:#d4af37;
+}
+
+.lang-menu a{
+  color:white;
+  text-decoration:none;
+  padding:2px 6px;
+  border-radius:4px;
+  border:1px solid rgba(212,175,55,.4);
+}
+
+.lang-menu a:hover{
+  background:#d4af37;
+  color:#0e2b1f;
+}
+
+/* ===== CONTENT ===== */
 .container{
   max-width:900px;
   margin:80px auto;
   padding:40px 20px;
+  text-align:center;
 }
 
-/* ===== TYTUŁ ===== */
 h1{
   color:#d4af37;
-  font-size:44px;
+  font-size:42px;
   margin-bottom:30px;
 }
 
-/* ===== OPIS ===== */
 .desc{
-  max-width:750px;
-  margin:0 auto;
-  line-height:1.7;
-  font-size:18px;
   background:rgba(0,0,0,.45);
   border:1px solid rgba(212,175,55,.35);
   border-radius:18px;
-  padding:28px;
+  padding:30px;
+  line-height:1.7;
+  font-size:18px;
+  text-align:left;
 }
 
-/* ===== BUTTON ===== */
 .back{
   display:inline-block;
-  margin-top:50px;
+  margin-top:40px;
   padding:14px 24px;
   background:#d4af37;
   color:#0e2b1f;
@@ -55,22 +112,85 @@ h1{
   border-radius:10px;
   font-weight:bold;
 }
+
+footer{
+  text-align:center;
+  padding:30px;
+  color:#d4af37;
+  border-top:1px solid rgba(212,175,55,.35);
+}
 </style>
 </head>
 
 <body>
 
+<!-- ===== MENU ===== -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">MOC NATURY</a>
+
+    <div class="nav-links">
+      <a href="index.html">Start</a>
+      <a href="onas.html">O nas</a>
+      <a href="cennik.html">Cennik</a>
+
+      <div class="lang-menu">
+        🌐 Język:
+        <a href="#" onclick="translateTo('pl')">PL</a>
+        <a href="#" onclick="translateTo('en')">EN</a>
+        <a href="#" onclick="translateTo('de')">DE</a>
+        <a href="#" onclick="translateTo('uk')">UA</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== TREŚĆ ===== -->
 <div class="container">
 
-<h1>BAŃKI CHIŃSKIE</h1>
+  <!-- 🔴 ZMIEŃ TYTUŁ -->
+  <h1>BAŃKI CHIŃSKIE</h1>
 
-<div class="desc">
-Stawianie baniek polega na przykładaniu do skóry naczyń (baniek) i wytwarzaniu w nich podciśnienia (próżni), co wciąga skórę i tkankę podskórną, powodując przekrwienie, pękanie drobnych naczyń krwionośnych i mobilizację układu odpornościowego. Efektem jest poprawa krążenia, rozluźnienie mięśni i wzmocnienie odporności poprzez dostarczenie organizmowi „ciała obcego” (krwi), które stymuluje produkcję przeciwciał, wspomagając walkę z infekcjami.
+  <!-- 🔴 ZMIEŃ OPIS -->
+  <div class="desc">
+   Stawianie baniek polega na przykładaniu do skóry naczyń (baniek) i wytwarzaniu w nich podciśnienia (próżni), co wciąga skórę i tkankę podskórną, powodując przekrwienie, pękanie drobnych naczyń krwionośnych i mobilizację układu odpornościowego. Efektem jest poprawa krążenia, rozluźnienie mięśni i wzmocnienie odporności poprzez dostarczenie organizmowi „ciała obcego” (krwi), które stymuluje produkcję przeciwciał, wspomagając walkę z infekcjami.
+
+  </div>
+
+  <a href="index.html" class="back">← Powrót do strony głównej</a>
 </div>
 
-<a href="index.html" class="back">← Powrót do strony głównej</a>
+<footer>
+  © <span id="year"></span> Gabinet MOC NATURY
+</footer>
 
-</div>
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'pl',
+    includedLanguages: 'pl,en,de,uk',
+    autoDisplay: false
+  }, 'google_translate_element');
+}
+
+function translateTo(lang){
+  if(lang === 'pl'){
+    document.cookie = "googtrans=/pl/pl;path=/";
+    location.reload();
+    return;
+  }
+  const select = document.querySelector(".goog-te-combo");
+  if(select){
+    select.value = lang;
+    select.dispatchEvent(new Event("change"));
+  }
+}
+</script>
+
+<div id="google_translate_element" style="display:none;"></div>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>
